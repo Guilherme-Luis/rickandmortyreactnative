@@ -19,6 +19,9 @@ export const Login = () => {
       navigation.navigate('main')
     }
   }
+  const handleRegister = () => {
+    
+  }
 
   return (
     <View style={styles.container}>
@@ -43,6 +46,11 @@ export const Login = () => {
         onChangeText={setPassword}
       />
       <View style={styles.buttonContainer}>
+      <TouchableOpacity style={styles.button} onPress={handleRegister}>
+          <View>
+            <Text style={styles.buttonText}>Register</Text>
+          </View>
+        </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={handleLogin}>
           <View>
             <Text style={styles.buttonText}>Login</Text>
