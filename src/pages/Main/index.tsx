@@ -41,13 +41,13 @@ export class Main extends Component<{
 
   async componentDidMount() {}
 
-  componentDidUpdate(_, prevState) {}
+  //
 
   render() {
     const {loading} = this.state
 
     const fetchCharacters = async (character: string) => {
-      const {data} = await rickymortyApi.get('/character/?name=rick')
+      const {data} = await rickymortyApi.get(`/character/?name=${character}`)
 
       const result = data.results[0]
       return {
@@ -105,29 +105,29 @@ export class Main extends Component<{
         </Form>
         <CharacterList
           data={this.state.characters}
-          keyExtractor={item => item.name}
-          renderItem={({item}) => (
-            <Character>
-              <CharacterImageContainer>
-                <CharacterImage source={{uri: item.image}} />
-              </CharacterImageContainer>
-              <CharacterInfoContainer>
-                <CharacterName>{item.name}</CharacterName>
-                <CharacterStatus>{item.status}</CharacterStatus>
-                <CharacterInfoLabel>
-                  Ultima localização conhecida
-                </CharacterInfoLabel>
-                <CharacterStatus>{item.lastLocation}</CharacterStatus>
-                <CharacterInfoLabel>Primeira aparição</CharacterInfoLabel>
-                <CharacterStatus>Episodio {item.firstSeenIn}</CharacterStatus>
-              </CharacterInfoContainer>
-            </Character>
-          )}
+          keyExtractor={item => (item as unknown as Character).name}
+          renderItem={({item}) => <CharacterCard item={item as any} />}
         />
       </Container>
     )
   }
 }
+
+const CharacterCard = ({item}: {item: Character}) => (
+  <Character>
+    <CharacterImageContainer>
+      <CharacterImage source={{uri: item.image}} />
+    </CharacterImageContainer>
+    <CharacterInfoContainer>
+      <CharacterName>{item.name}</CharacterName>
+      <CharacterStatus>{item.status}</CharacterStatus>
+      <CharacterInfoLabel>Ultima localização conhecida</CharacterInfoLabel>
+      <CharacterStatus>{item.lastLocation}</CharacterStatus>
+      <CharacterInfoLabel>Primeira aparição</CharacterInfoLabel>
+      <CharacterStatus>Episodio {item.firstSeenIn}</CharacterStatus>
+    </CharacterInfoContainer>
+  </Character>
+)
 
 const styles = StyleSheet.create({
   SubmitButton: {
