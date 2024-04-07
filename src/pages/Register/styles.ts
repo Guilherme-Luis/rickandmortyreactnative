@@ -9,7 +9,6 @@ export const Container = styled.View`
 export const FormContainer = styled.View`
 
 `
-
 export const ActionsContainer = styled.View`
   flex-direction: row;
   justify-content: flex-end;
@@ -25,6 +24,7 @@ export const CancelActionButton = styled(RectButton)`
 
 export const CancelActionButtonText = styled.Text`
   color: ${props => props.theme.textOnError};
+
 `
 
 export const SaveActionButton = styled(RectButton)`

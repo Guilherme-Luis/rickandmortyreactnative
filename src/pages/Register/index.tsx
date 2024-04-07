@@ -1,6 +1,8 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react'
-import {Text} from 'react-native'
+import {Alert, Text} from 'react-native'
 import {InputLabel} from '../../components/InputLabel'
+import {navigationProps} from '../../types'
 import {
   ActionsContainer,
   CancelActionButton,
@@ -12,6 +14,16 @@ import {
 } from './styles'
 
 export const Register = () => {
+
+  const navigation = useNavigation<navigationProps>()
+  const handleMainCancel = () => {
+    navigation.navigate('login')
+  }
+  const handleMain = () => {
+    Alert.alert('Usuário Cadastrado com sucesso!')
+    navigation.navigate('login')
+  }
+
   return (
     <Container>
       <FormContainer>
@@ -19,39 +31,39 @@ export const Register = () => {
           label="Nome"
           placeholder="Nome"
           onChangeText={() => {}}
-          value="Nome"
+          //value="Nome"
         />
         <InputLabel
           label="Telefone"
           placeholder="Telefone"
           onChangeText={() => {}}
-          value="Telefone"
+          //value="Telefone"
         />
         <InputLabel
           label="CPF"
           placeholder="CPF"
           onChangeText={() => {}}
-          value="CPF"
+          //value="CPF"
         />
         <InputLabel
           label="Email"
           placeholder="Email"
           onChangeText={() => {}}
-          value="Email"
+          //value="Email"
         />
         <InputLabel
           label="Curso"
           placeholder="Curso"
           onChangeText={() => {}}
-          value="Curso"
+          //value="Curso"
         />
 
         <ActionsContainer>
           <CancelActionButton>
-            <CancelActionButtonText>Cancelar</CancelActionButtonText>
+            <CancelActionButtonText onPress={handleMainCancel}>Cancelar</CancelActionButtonText>
           </CancelActionButton>
           <SaveActionButton>
-            <SaveActionButtonText>Salvar</SaveActionButtonText>
+            <SaveActionButtonText onPress={handleMain}>Salvar</SaveActionButtonText>
           </SaveActionButton>
         </ActionsContainer>
       </FormContainer>

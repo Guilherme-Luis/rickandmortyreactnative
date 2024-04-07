@@ -27,7 +27,7 @@ export const Login = () => {
       </View>
       <TextInput
         style={styles.input}
-        placeholder="Email"
+        placeholder="Email Address"
         textContentType="emailAddress"
         value={email}
         onChangeText={setEmail}
