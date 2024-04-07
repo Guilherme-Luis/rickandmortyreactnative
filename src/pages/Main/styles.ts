@@ -46,7 +46,9 @@ export const CharacterImage = styled.Image`
   height: 100px;
 `
 
-export const CharacterInfoContainer = styled.View``
+export const CharacterInfoContainer = styled.View`
+  flex: 1;
+`
 
 export const CharacterName = styled.Text`
   font-size: 16px;
@@ -64,4 +66,29 @@ export const CharacterInfoLabel = styled.Text`
 
 export const CharacterInfo = styled.Text`
   color: ${props => props.theme.textSecondary};
+`
+
+export const ActionsContainer = styled.View`
+  display: flex;
+  gap: 8px;
+  flex-direction: row;
+  justify-content: flex-end;
+`
+
+export const RemoveAction = styled(RectButton)`
+  background-color: ${props => props.theme.error500};
+  padding: 8px 16px;
+`
+
+export const RemoveActionText = styled.Text`
+  color: ${props => props.theme.textOnError};
+`
+
+export const SeeCharacterAction = styled(RectButton)`
+  background-color: ${props => props.theme.primary400};
+  padding: 8px 16px;
+`
+
+export const SeeCharacterActionText = styled.Text`
+  color: ${props => props.theme.textOnPrimary};
 `

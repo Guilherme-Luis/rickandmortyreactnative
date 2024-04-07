@@ -3,6 +3,7 @@ import {Alert, StyleSheet} from 'react-native'
 // import { Icon } from 'react-native-vector-icons/Icon'
 import {rickymortyApi} from '../../services/rickymortyApi'
 import {
+  ActionsContainer,
   Character,
   CharacterImage,
   CharacterImageContainer,
@@ -14,6 +15,10 @@ import {
   Container,
   Form,
   Input,
+  RemoveAction,
+  RemoveActionText,
+  SeeCharacterAction,
+  SeeCharacterActionText,
   SubmitButton,
 } from './styles'
 
@@ -126,6 +131,14 @@ const CharacterCard = ({item}: {item: Character}) => (
       <CharacterInfoLabel>Primeira aparição</CharacterInfoLabel>
       <CharacterStatus>Episodio {item.firstSeenIn}</CharacterStatus>
     </CharacterInfoContainer>
+    <ActionsContainer>
+      <RemoveAction>
+        <RemoveActionText>Remover</RemoveActionText>
+      </RemoveAction>
+      <SeeCharacterAction>
+        <SeeCharacterActionText>Ver personagem</SeeCharacterActionText>
+      </SeeCharacterAction>
+    </ActionsContainer>
   </Character>
 )
 
