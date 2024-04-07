@@ -1,5 +1,4 @@
-
-
+import 'styled-components'
 
 export const theme = {
   primary400: '#818CF8',
@@ -11,8 +10,16 @@ export const theme = {
   background: '#cbd5e1',
 }
 
-type Theme = typeof theme
+import type {CSSProp} from 'styled-components'
 
-declare module 'styled-components' {
-  export interface DefaultTheme extends Theme {}
+type ThemeType = typeof theme
+
+declare module 'styled-components/native' {
+  export interface DefaultTheme extends ThemeType {}
+}
+
+declare module 'react' {
+  interface DOMAttributes<T> {
+    css?: CSSProp
+  }
 }

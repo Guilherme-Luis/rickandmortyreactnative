@@ -1,4 +1,3 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json",
-  "files": ["src/@types/styled-component/index.d.ts"]
 }
