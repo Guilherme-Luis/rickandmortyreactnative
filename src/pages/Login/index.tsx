@@ -1,18 +1,15 @@
-import { useNavigation } from '@react-navigation/native'
-import React, { useEffect, useState } from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { TextInput } from 'react-native-gesture-handler'
-import { theme } from '../../theme'
-import { navigationProps } from '../../types'
+import {useNavigation} from '@react-navigation/native'
+import React, {useState} from 'react'
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native'
+import {TextInput} from 'react-native-gesture-handler'
+import {theme} from '../../theme'
+import {navigationProps} from '../../types'
 
 export const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   const navigation = useNavigation<navigationProps>()
-  useEffect(() => {
-    navigation.navigate('main')
-  }, [navigation])
 
   const handleLogin = () => {
     if (email.length > 0 && password.length > 0) {
@@ -20,7 +17,7 @@ export const Login = () => {
     }
   }
   const handleRegister = () => {
-    
+    navigation.navigate('register')
   }
 
   return (
@@ -46,7 +43,7 @@ export const Login = () => {
         onChangeText={setPassword}
       />
       <View style={styles.buttonContainer}>
-      <TouchableOpacity style={styles.button} onPress={handleRegister}>
+        <TouchableOpacity style={styles.button} onPress={handleRegister}>
           <View>
             <Text style={styles.buttonText}>Register</Text>
           </View>

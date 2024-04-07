@@ -5,6 +5,7 @@ import {ThemeProvider} from 'styled-components'
 import {Character} from './pages/Character'
 import {Login} from './pages/Login'
 import {Main} from './pages/Main'
+import {Register} from './pages/Register'
 import {theme} from './theme'
 
 const Stack = createStackNavigator()
@@ -53,6 +54,23 @@ export default function Routes() {
             component={Character as any}
             options={{
               title: defaultTitle,
+              headerTitleAlign: 'center',
+              headerTintColor: theme.textOnPrimary,
+              headerLeft: undefined,
+              headerStyle: {
+                backgroundColor: theme.primary500,
+              },
+              headerTitleStyle: {
+                fontWeight: 'bold',
+                color: theme.textOnPrimary,
+              },
+            }}
+          />
+          <Stack.Screen
+            name="register"
+            component={Register}
+            options={{
+              title: 'REGISTER',
               headerTitleAlign: 'center',
               headerTintColor: theme.textOnPrimary,
               headerLeft: undefined,
