@@ -1,7 +1,10 @@
 import { RectButton } from 'react-native-gesture-handler'
 import styled from 'styled-components/native'
 
-export const Container = styled.View``
+export const Container = styled.View`
+  flex: 1;
+  padding: 20px;
+`
 
 export const FormContainer = styled.View`
 
@@ -9,12 +12,13 @@ export const FormContainer = styled.View`
 
 export const ActionsContainer = styled.View`
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 8px;
   margin-top: 20px;
 `
 
 export const CancelActionButton = styled(RectButton)`
-  background-color: ${props => props.theme.error};
+  background-color: ${props => props.theme.error500};
   padding: 10px;
   border-radius: 5px;
 `
@@ -24,7 +28,7 @@ export const CancelActionButtonText = styled.Text`
 `
 
 export const SaveActionButton = styled(RectButton)`
-  background-color: ${props => props.theme.primary};
+  background-color: ${props => props.theme.primary500};
   padding: 10px;
   border-radius: 5px;
 `
