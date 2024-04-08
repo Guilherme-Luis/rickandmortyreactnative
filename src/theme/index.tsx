@@ -1,9 +1,9 @@
 import 'styled-components'
 
 export const theme = {
-  primary400: '#818CF8',
-  primary500: '#6366f1',
-  primary600: '#4F46E5',
+  primary400: '#84cc16',
+  primary500: '#65a30d',
+  primary600: '#4d7c0f',
   error500: '#ef4444',
   textOnPrimary: '#ffffff',
   textOnError: '#ffffff',

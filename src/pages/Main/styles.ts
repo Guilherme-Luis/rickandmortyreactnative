@@ -38,18 +38,23 @@ export const SubmitButton = styled(RectButton)`
 
 export const CharacterList = styled.FlatList`
   margin-top: 16px;
+  flex: 1;
 `
 export const CharacterItemSeparator = styled.View`
   height: 16px;
 `
 export const Character = styled.View`
   border: solid 2px ${props => props.theme.primary500};
+  height: 400px;
   border-radius: 20px;
-  overflow: hidden;
+  
 `
 
 export const CharacterImageContainer = styled.View`
   height: 200px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  overflow: hidden;
 `
 
 export const CharacterImage = styled.Image`

@@ -1,6 +1,6 @@
-import { useNavigation } from '@react-navigation/native';
-import React, { useState } from 'react'
-import {Alert, Text} from 'react-native'
+import {useNavigation} from '@react-navigation/native'
+import React, {useState} from 'react'
+import {Alert, StyleSheet} from 'react-native'
 import {InputLabel} from '../../components/InputLabel'
 import {navigationProps} from '../../types'
 import {
@@ -12,7 +12,6 @@ import {
   SaveActionButton,
   SaveActionButtonText,
 } from './styles'
-import { StyleSheet } from 'react-native';
 
 export const Register = () => {
   const [name, setName] = useState('')
@@ -65,15 +64,13 @@ export const Register = () => {
         />
 
         <ActionsContainer>
-          <CancelActionButton>
-            <CancelActionButtonText onPress={handleMainCancel} style={styles.RoundedButton}>
-              Cancelar
-            </CancelActionButtonText>
+          <CancelActionButton
+            onPress={handleMainCancel}
+            style={styles.RoundedButton}>
+            <CancelActionButtonText>Cancelar</CancelActionButtonText>
           </CancelActionButton>
-          <SaveActionButton>
-            <SaveActionButtonText onPress={handleMain} style={styles.RoundedButton}>
-              Salvar
-            </SaveActionButtonText>
+          <SaveActionButton onPress={handleMain} style={styles.RoundedButton}>
+            <SaveActionButtonText>Salvar</SaveActionButtonText>
           </SaveActionButton>
         </ActionsContainer>
       </FormContainer>
@@ -82,6 +79,7 @@ export const Register = () => {
 }
 const styles = StyleSheet.create({
   RoundedButton: {
-    borderRadius: 5
-  }
+    borderRadius: 10,
+    overflow: 'hidden',
+  },
 })

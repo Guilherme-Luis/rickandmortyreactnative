@@ -2,7 +2,7 @@ import {NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
 import React from 'react'
 import {ThemeProvider} from 'styled-components'
-import {Character} from './pages/Character'
+import {CharacterPage} from './pages/CharacterPage'
 import {Login} from './pages/Login'
 import {Main} from './pages/Main'
 import {Register} from './pages/Register'
@@ -51,7 +51,7 @@ export default function Routes() {
           />
           <Stack.Screen
             name="character"
-            component={Character as any}
+            component={CharacterPage as any}
             options={{
               title: defaultTitle,
               headerTitleAlign: 'center',

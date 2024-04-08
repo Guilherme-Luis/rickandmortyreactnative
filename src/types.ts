@@ -20,4 +20,6 @@ export type Character = {
   status: string
   lastLocation: string
   firstSeenIn: number
+  episodes: number[]
+  origin: string
 }

@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     width: 300,
+    gap: 4,
     flexDirection: 'row',
     justifyContent: 'flex-end',
   },
@@ -96,7 +97,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.primary500,
     padding: 8,
     paddingHorizontal: 16,
-    borderRadius: 100,
+    borderRadius: 5,
   },
   buttonText: {
     fontWeight: 'bold',
