@@ -12,6 +12,7 @@ import {
   SaveActionButton,
   SaveActionButtonText,
 } from './styles'
+import { StyleSheet } from 'react-native';
 
 export const Register = () => {
 
@@ -60,13 +61,22 @@ export const Register = () => {
 
         <ActionsContainer>
           <CancelActionButton>
-            <CancelActionButtonText onPress={handleMainCancel}>Cancelar</CancelActionButtonText>
+            <CancelActionButtonText onPress={handleMainCancel} style={styles.RoundedButton}>
+              Cancelar
+            </CancelActionButtonText>
           </CancelActionButton>
           <SaveActionButton>
-            <SaveActionButtonText onPress={handleMain}>Salvar</SaveActionButtonText>
+            <SaveActionButtonText onPress={handleMain} style={styles.RoundedButton}>
+              Salvar
+            </SaveActionButtonText>
           </SaveActionButton>
         </ActionsContainer>
       </FormContainer>
     </Container>
   )
 }
+const styles = StyleSheet.create({
+  RoundedButton: {
+    borderRadius: 5
+  }
+})
