@@ -21,7 +21,6 @@ export const ActionsContainer = styled.View`
 export const CancelActionButton = styled(RectButton)`
   background-color: ${props => props.theme.error500};
   padding: 10px;
-  border-radius: 5px;
 `
 
 export const CancelActionButtonText = styled.Text`
@@ -32,7 +31,6 @@ export const CancelActionButtonText = styled.Text`
 export const SaveActionButton = styled(RectButton)`
   background-color: ${props => props.theme.primary500};
   padding: 10px;
-  border-radius: 5px;
 `
 
 export const SaveActionButtonText = styled.Text`
