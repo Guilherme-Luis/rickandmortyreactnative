@@ -19,6 +19,10 @@ export const Input = styled.TextInput`
   padding: 8px 16px;
 `
 
+export const TextOnPrimary = styled.Text`
+  color: ${props => props.theme.textOnPrimary};
+`
+
 export const SubmitButton = styled(RectButton)`
   background-color: ${props => props.theme.primary400};
   justify-content: center;
@@ -35,19 +39,28 @@ export const SubmitButton = styled(RectButton)`
 export const CharacterList = styled.FlatList`
   margin-top: 16px;
 `
-
+export const CharacterItemSeparator = styled.View`
+  height: 16px;
+`
 export const Character = styled.View`
-  width: 100%;
+  border: solid 2px ${props => props.theme.primary500};
+  border-radius: 20px;
+  overflow: hidden;
 `
 
-export const CharacterImageContainer = styled.View``
+export const CharacterImageContainer = styled.View`
+  height: 200px;
+`
 
 export const CharacterImage = styled.Image`
-  height: 100px;
+  height: 100%;
+  object-fit: cover;
 `
 
 export const CharacterInfoContainer = styled.View`
+  margin-top: 8px;
   flex: 1;
+  padding: 8px;
 `
 
 export const CharacterName = styled.Text`
@@ -69,10 +82,12 @@ export const CharacterInfo = styled.Text`
 `
 
 export const ActionsContainer = styled.View`
+  margin-top: 8px;
   display: flex;
   gap: 8px;
   flex-direction: row;
   justify-content: flex-end;
+  padding: 8px;
 `
 
 export const RemoveAction = styled(RectButton)`

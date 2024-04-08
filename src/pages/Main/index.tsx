@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Alert, StyleSheet} from 'react-native'
+import {ActivityIndicator, Alert, StyleSheet} from 'react-native'
 // import { Icon } from 'react-native-vector-icons/Icon'
 import {rickymortyApi} from '../../services/rickymortyApi'
 import {
@@ -9,6 +9,7 @@ import {
   CharacterImageContainer,
   CharacterInfoContainer,
   CharacterInfoLabel,
+  CharacterItemSeparator,
   CharacterList,
   CharacterName,
   CharacterStatus,
@@ -20,6 +21,7 @@ import {
   SeeCharacterAction,
   SeeCharacterActionText,
   SubmitButton,
+  TextOnPrimary,
 } from './styles'
 
 type Character = {
@@ -101,21 +103,26 @@ export class Main extends Component<{
           <SubmitButton
             style={styles.SubmitButton}
             onPress={handleAddCharacter}>
-            {/* {loading ? (
+            {loading ? (
               <ActivityIndicator color={'#fff'} />
             ) : (
-              <Icon name="add" size={20} color={theme.textOnPrimary} />
-            )} */}
+              <TextOnPrimary>Add</TextOnPrimary>
+            )}
           </SubmitButton>
         </Form>
         <CharacterList
           data={this.state.characters}
           keyExtractor={item => (item as unknown as Character).name}
           renderItem={({item}) => <CharacterCard item={item as any} />}
+          ItemSeparatorComponent={renderCharacterSeparator}
         />
       </Container>
     )
   }
+}
+
+function renderCharacterSeparator() {
+  return <CharacterItemSeparator />
 }
 
 const CharacterCard = ({item}: {item: Character}) => (
