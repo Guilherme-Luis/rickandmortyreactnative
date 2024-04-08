@@ -31,6 +31,7 @@ type Character = {
   lastLocation: string
   firstSeenIn: number
 }
+
 type State = {
   newCharacter: string
   characters: Character[]
@@ -101,7 +102,7 @@ export class Main extends Component<{
           />
 
           <SubmitButton
-            style={styles.SubmitButton}
+            style={styles.RoundedButton}
             onPress={handleAddCharacter}>
             {loading ? (
               <ActivityIndicator color={'#fff'} />
@@ -139,7 +140,7 @@ const CharacterCard = ({item}: {item: Character}) => (
       <CharacterStatus>Episodio {item.firstSeenIn}</CharacterStatus>
     </CharacterInfoContainer>
     <ActionsContainer>
-      <RemoveAction>
+      <RemoveAction style={styles.RoundedButton}>
         <RemoveActionText>Remover</RemoveActionText>
       </RemoveAction>
       <SeeCharacterAction>
@@ -150,7 +151,7 @@ const CharacterCard = ({item}: {item: Character}) => (
 )
 
 const styles = StyleSheet.create({
-  SubmitButton: {
+  RoundedButton: {
     borderRadius: 5,
   },
 })

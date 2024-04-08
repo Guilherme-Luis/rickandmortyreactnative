@@ -7,7 +7,9 @@ export const Container = styled.View`
 `
 
 export const FormContainer = styled.View`
-
+  flex: 1;
+  justify-content: center;
+  gap: 20px;
 `
 export const ActionsContainer = styled.View`
   flex-direction: row;

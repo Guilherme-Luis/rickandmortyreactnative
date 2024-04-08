@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import React from 'react'
+import React, { useState } from 'react'
 import {Alert, Text} from 'react-native'
 import {InputLabel} from '../../components/InputLabel'
 import {navigationProps} from '../../types'
@@ -14,6 +14,11 @@ import {
 } from './styles'
 
 export const Register = () => {
+  const [name, setName] = useState('')
+  const [tel, setTel] = useState('')
+  const [cpf, setCpf] = useState('')
+  const [email, setEmail] = useState('')
+  const [curso, setCurso] = useState('')
 
   const navigation = useNavigation<navigationProps>()
   const handleMainCancel = () => {
@@ -30,32 +35,32 @@ export const Register = () => {
         <InputLabel
           label="Nome"
           placeholder="Nome"
-          onChangeText={() => {}}
-          //value="Nome"
+          onChangeText={setName}
+          value={name}
         />
         <InputLabel
           label="Telefone"
           placeholder="Telefone"
-          onChangeText={() => {}}
-          //value="Telefone"
+          onChangeText={setTel}
+          value={tel}
         />
         <InputLabel
           label="CPF"
           placeholder="CPF"
-          onChangeText={() => {}}
-          //value="CPF"
+          onChangeText={setCpf}
+          value={cpf}
         />
         <InputLabel
           label="Email"
           placeholder="Email"
-          onChangeText={() => {}}
-          //value="Email"
+          onChangeText={setEmail}
+          value={email}
         />
         <InputLabel
           label="Curso"
           placeholder="Curso"
-          onChangeText={() => {}}
-          //value="Curso"
+          onChangeText={setCurso}
+          value={curso}
         />
 
         <ActionsContainer>
