@@ -33,36 +33,36 @@ export const Register = () => {
     <Container>
       <FormContainer>
         <InputLabel
-          label="Nome"
+          label="Nome:"
           placeholder="Nome"
           onChangeText={setName}
           value={name}
         />
         <InputLabel
-          label="Telefone"
+          label="Telefone:"
           placeholder="Telefone"
           onChangeText={setTel}
           value={tel}
         />
         <InputLabel
-          label="CPF"
+          label="CPF:"
           placeholder="CPF"
           onChangeText={setCpf}
           value={cpf}
         />
         <InputLabel
-          label="Email"
+          label="Email:"
           placeholder="Email"
           onChangeText={setEmail}
           value={email}
         />
         <InputLabel
-          label="Curso"
+          label="Curso:"
           placeholder="Curso"
           onChangeText={setCurso}
           value={curso}
         />
-
+        
         <ActionsContainer>
           <CancelActionButton
             onPress={handleMainCancel}

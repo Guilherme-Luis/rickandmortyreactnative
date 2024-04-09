@@ -23,7 +23,7 @@ export const Login = () => {
   return (
     <View style={styles.container}>
       <View style={styles.labelContainer}>
-        <Text style={styles.label}>Email</Text>
+        <Text style={styles.label}>Email:</Text>
       </View>
       <TextInput
         style={styles.input}
@@ -33,7 +33,7 @@ export const Login = () => {
         onChangeText={setEmail}
       />
       <View style={styles.labelContainer}>
-        <Text style={styles.label}>Password</Text>
+        <Text style={styles.label}>Password:</Text>
       </View>
       <TextInput
         style={styles.input}
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 4,
-    color: '#0c4a6e',
+    color: theme.primary500,
   },
   input: {
     height: 40,

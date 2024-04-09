@@ -1,5 +1,6 @@
 import { RectButton } from 'react-native-gesture-handler'
 import styled from 'styled-components/native'
+import { InputLabel } from '../../components/InputLabel'
 
 export const Container = styled.View`
   flex: 1;
