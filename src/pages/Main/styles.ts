@@ -75,7 +75,7 @@ export const CharacterName = styled.Text`
 
 export const CharacterStatus = styled.Text`
   font-size: 14px;
-  color: ${props => props.theme.textSecondary};
+  color: #fff;
 `
 
 export const CharacterInfoLabel = styled.Text`
@@ -83,7 +83,7 @@ export const CharacterInfoLabel = styled.Text`
 `
 
 export const CharacterInfo = styled.Text`
-  color: ${props => props.theme.textSecondary};
+  color: #fff;
 `
 
 export const ActionsContainer = styled.View`
